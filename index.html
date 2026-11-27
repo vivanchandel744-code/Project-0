@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PROJECT ZERO</title>
+    <style>
+      #boot-error{display:none;position:fixed;z-index:9999;inset:0;background:#090c0d;color:#dfe5df;padding:10vh 9vw;font:14px/1.7 monospace}
+      #boot-error h1{font:700 38px Arial,sans-serif;letter-spacing:.12em}
+      #boot-error p{max-width:720px;color:#aab3ae;white-space:pre-wrap}
+    </style>
+    <script>
+      window.addEventListener('error',function(e){var box=document.getElementById('boot-error');if(box){box.style.display='block';box.innerHTML='<h1>PROJECT ZERO COULD NOT START</h1><p>'+String(e.message||'Browser startup error').replace(/[<>&]/g,'')+'</p><p>Run this project with <b>npm run dev</b> and open the local http://localhost address. Do not open index.html directly.</p>'}});
+      window.addEventListener('unhandledrejection',function(e){var box=document.getElementById('boot-error');if(box){box.style.display='block';box.innerHTML='<h1>PROJECT ZERO COULD NOT START</h1><p>'+String(e.reason||'Module loading error').replace(/[<>&]/g,'')+'</p><p>Run this project with <b>npm run dev</b> and open the local http://localhost address. Do not open index.html directly.</p>'}});
+    </script>
+  </head>
+  <body>
+    <div id="app"></div>
+    <div id="boot-error"></div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
